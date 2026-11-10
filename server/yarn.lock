@@ -3933,13 +3933,32 @@ flow-bin@^0.217.0:
   resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.217.2.tgz#96affa17f3cb303019f740bffeb28cfab7ce1250"
   integrity sha512-fk4NcfybYjzlww1sEsfk71nqXvonAYpMRFEjmZxibDWWBiaw8DGmqXWZ7XzSunVB15VkJfOstn/sYP1EYPPyWg==
 
-flow-remove-types@^2.217.1:
-  version "2.235.1"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.235.1.tgz#addab26710a96f3e66b950f7ec772a0a7a36710f"
-  integrity sha512-aDcBPXFfgKisR7XJoFUNsropyKQdxHh5qx/BSCPXGIqP80sa8r5bV+RL2rbAzCuoAkDIFZkICFttC2C1pjFBwg==
+flow-enums-runtime@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/flow-enums-runtime/-/flow-enums-runtime-0.0.6.tgz#5bb0cd1b0a3e471330f4d109039b7eba5cb3e787"
+  integrity sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==
+
+flow-estree@0.338.0:
+  version "0.338.0"
+  resolved "https://registry.yarnpkg.com/flow-estree/-/flow-estree-0.338.0.tgz#8e0b11e457983cb03fbc506d0fce3894b3b936da"
+  integrity sha512-ol4C6cIEcL9nep6G0qa3BuJcO5cZCH07shxNpChJ/TotKQaz5OWtn4IqgpMNF0kHISdOnMApirDwp2LwWL+KhQ==
+
+flow-parser@^0.338.0:
+  version "0.338.0"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.338.0.tgz#9af43844156b3d44b93792000200b7948519d399"
+  integrity sha512-GF+ohfrTVlvsNhxfRkON49QKG5j+5oqGb8qpGwE6mYlhIBaXDsss/JzfIxpSwVXgWtw8z8kabf/pNo1jXor5NA==
   dependencies:
-    hermes-parser "0.20.1"
+    flow-estree "0.338.0"
+
+flow-remove-types@^2.338.0:
+  version "2.338.0"
+  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.338.0.tgz#e69b76b4e00ca2797696b761dfaeed29d8bba5a7"
+  integrity sha512-HbU4fmzH7AMXDYBBpE2oC5vYyDg5m3uuaqIO/KoAcGFExCB3v/M160Z4+WayhbCM60zRQV7+B4nVc9si96SvgA==
+  dependencies:
+    flow-enums-runtime "^0.0.6"
+    flow-parser "^0.338.0"
     pirates "^3.0.2"
+    source-map-support "^0.5.21"
     vlq "^0.2.1"
 
 fn.name@1.x.x:
@@ -4275,24 +4294,12 @@ hermes-estree@0.15.1:
   resolved "https://registry.yarnpkg.com/hermes-estree/-/hermes-estree-0.15.1.tgz#d06d4ddf87e91857b0130a083a9d7696d7aec61f"
   integrity sha512-XrQH+GATG/8DYbzlrVs6Vf/EDxLhYEHXvzt/Xve4b/NXXpsNLDN8bdBEKp5z0XeOMoL1XMEexxIIf1a5bH6kYA==
 
-hermes-estree@0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/hermes-estree/-/hermes-estree-0.20.1.tgz#0b9a544cf883a779a8e1444b915fa365bef7f72d"
-  integrity sha512-SQpZK4BzR48kuOg0v4pb3EAGNclzIlqMj3Opu/mu7bbAoFw6oig6cEt/RAi0zTFW/iW6Iz9X9ggGuZTAZ/yZHg==
-
 hermes-parser@0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/hermes-parser/-/hermes-parser-0.15.1.tgz#f02587be85228b22841d50f6839ae42a308e5100"
   integrity sha512-38Re105dr4UZ0/EPRApWxtIOWWynQpdOYWO+7nFO8ADd2mXdaHKMCFAxIjkqACa1GLrAtrXqqaJdUYHi/QUbkA==
   dependencies:
     hermes-estree "0.15.1"
-
-hermes-parser@0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/hermes-parser/-/hermes-parser-0.20.1.tgz#ad10597b99f718b91e283f81cbe636c50c3cff92"
-  integrity sha512-BL5P83cwCogI8D7rrDCgsFY0tdYUtmFP9XaXtl2IQjC+2Xo+4okjfXintlTxcIwl4qeGddEl28Z11kbVIw0aNA==
-  dependencies:
-    hermes-estree "0.20.1"
 
 http-errors@2.0.0:
   version "2.0.0"
@@ -6572,6 +6579,19 @@ slugify@^1.6.6:
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.6.tgz#2d4ac0eacb47add6af9e04d3be79319cbcc7924b"
   integrity sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==
+
+source-map-support@^0.5.21:
+  version "0.5.21"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.21.tgz#04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f"
+  integrity sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
+
+source-map@^0.6.0:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+  integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
 split2@^4.1.0:
   version "4.2.0"
